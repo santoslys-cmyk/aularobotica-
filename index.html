@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LojaOnline | Oferta e Cores</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f7f9fc;
+        }
+        /* cores atrativas e vibrantes */
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --accent: #ffe66d;
+            --dark: #1e272e;
+            --light: #f8f9fa;
+            --purple: #a463f5;
+            --pink: #ff9ff3;
+            --blue: #48dbfb;
+            --green: #1dd1a1;
+            --yellow: #feca57;
+            --orange: #ff9f43;
+            --red: #ee5253;
+            --gradient1: linear-gradient(145deg, #ff6b6b, #ee5253);
+            --gradient2: linear-gradient(145deg, #4ecdc4, #2e86ab);
+            --shadow: 0 15px 30px rgba(0,0,0,0.08);
+            --border-radius: 28px;
+        }
+
+        /* scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header atrativo */
+        header {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            font-weight: 800;
+            background: var(--gradient1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            background: var(--gradient2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+        }
+
+        .search-bar {
+            background: #f1f3f4;
+            padding: 12px 25px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            width: 350px;
+            justify-content: space-between;
+        }
+        .search-bar input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-bar i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .cart-icon {
+            font-size: 26px;
+            color: var(--dark);
+            position: relative;
+            cursor: pointer;
+        }
+        .cart-icon span {
+            position: absolute;
+            top: -10px;
+            right: -12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            padding: 4px 9px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Banner descontão */
+        .hero {
+            background: radial-gradient(circle at 80% 30%, #fff6e6, #ffe8d9);
+            border-radius: var(--border-radius);
+            margin: 35px 0;
+            padding: 40px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: var(--shadow);
+            border: 2px solid white;
+        }
+        .hero-text h2 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #2c3e50;
+        }
+        .hero-text .off {
+            color: var(--red);
+            background: var(--yellow);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #3d3d3d;
+            margin: 20px 0 10px;
+        }
+        .hero-btn {
+            background: var(--gradient1);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 0 #b33939;
+        }
+        .hero-btn:hover {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #b33939;
+        }
+        .hero-image img {
+            max-width: 280px;
+            border-radius: 30px;
+            transform: rotate(5deg);
+            transition: 0.5s;
+        }
+        .hero-image img:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        /* categorias coloridas */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 50px 0 25px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70%;
+            height: 6px;
+            background: var(--gradient1);
+            border-radius: 10px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        .category-card {
+            background: white;
+            border-radius: 30px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .category-card:hover {
+            transform: translateY(-12px);
+        }
+        .category-card i {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .category-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .category-card p {
+            color: #666;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* cores individuais categoria */
+        .cat1 { background: #ffe8df; color: #ff5e57; }
+        .cat2 { background: #e0f7fa; color: #00bcd4; }
+        .cat3 { background: #f3e5f5; color: #9c27b0; }
+        .cat4 { background: #fff3e0; color: #ff9800; }
+
+        /* vitrine produtos - cards super atrativos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 30px 0 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            padding: 20px 20px 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            transition: all 0.25s;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+
+        .badge-discount {
+            background: var(--red);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            z-index: 2;
+            box-shadow: 0 6px 0 #951f1f;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 22px;
+            margin-bottom: 18px;
+            background: #f1f5f9;
+            transition: 0.3s;
+            border: 3px solid white;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+        }
+
+        .product-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin: 8px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+        .new-price {
+            font-weight: 800;
+            font-size: 22px;
+            color: #16a34a;
+        }
+
+        /* varias cores - opções de cores em bolinhas */
+        .color-options {
+            display: flex;
+            gap: 10px;
+            margin: 12px 0;
+        }
+        .color-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid white;
+            outline: 1px solid #ddd;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+        .color-dot:hover {
+            transform: scale(1.25);
+            outline: 2px solid var(--dark);
+        }
+        .color-dot.selected {
+            outline: 3px solid var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-add {
+            background: var(--dark);
+            color: white;
+            border: none;
+            padding: 14px 0;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-add:hover {
+            background: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        /* separador categorias no html */
+        .category-banner {
+            background: linear-gradient(90deg, #fdfbfb, #ebf4f5);
+            padding: 16px 30px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0 0;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 0;
+            margin-top: 70px;
+            border-radius: 50px 50px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: var(--gradient1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* responsividade */
+        @media (max-width: 1000px) {
+            .category-grid { grid-template-columns: repeat(2,1fr); }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-image { margin-top: 30px; }
+        }
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .category-grid { grid-template-columns: 1fr; }
+            .header-flex { flex-wrap: wrap; gap: 15px; }
+            .search-bar { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>Shop<span>Colors</span></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Procure ofertas, cores...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span>3</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- HERO BANNER com super desconto -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>SUPER SALE <br> até 70% OFF</h2>
+                <span class="off"><i class="fas fa-tag"></i> 70% OFF em cores vibrantes</span>
+                <p>Os produtos mais coloridos e descolados com preços arrasadores!</p>
+                <button class="hero-btn">APROVEITAR <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=400&auto=format&fit=crop" alt="shopping bags coloridas" style="background: #ffeaa5; padding: 10px;">
+            </div>
+        </section>
+
+        <!-- CATEGORIAS SEPARADAS / VARIAS CORES  -->
+        <div>
+            <h2 class="section-title">Categorias <span style="color: var(--primary);">coloridas</span></h2>
+        </div>
+        <div class="category-grid">
+            <div class="category-card cat1">
+                <i class="fas fa-tshirt"></i>
+                <h3>Moda</h3>
+                <p>+200 cores</p>
+            </div>
+            <div class="category-card cat2">
+                <i class="fas fa-laptop"></i>
+                <h3>Eletrônicos</h3>
+                <p>RGB e mais</p>
+            </div>
+            <div class="category-card cat3">
+                <i class="fas fa-couch"></i>
+                <h3>Casa</h3>
+                <p>tons pastel</p>
+            </div>
+            <div class="category-card cat4">
+                <i class="fas fa-futbol"></i>
+                <h3>Esportes</h3>
+                <p>neon style</p>
+            </div>
+        </div>
+
+        <!-- PRODUTOS COM DESCONTOS, VARIAS CORES, imagens atrativas -->
+        <!-- CATEGORIA 1: MODA / VESTUÁRIO -->
+        <div class="category-banner">
+            <i class="fas fa-tags" style="color: var(--primary); font-size: 28px;"></i>
+            <h3 style="font-size: 26px; font-weight: 700;">Moda & Acessórios - até 60% OFF</h3>
+        </div>
+        <div class="product-grid" id="moda">
+            <!-- card 1 -->
+            <div class="product-card">
+                <span class="badge-discount">-45%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1495121553079-4c61bcce1894?w=400&auto=format&fit=crop" alt="camiseta colorida">
+                <h4 class="product-title">Camiseta Tie Dye</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 129,90</span>
+                    <span class="new-price">R$ 71,90</span>
+                </div>
+                <!-- varias cores -->
+                <div class="color-options">
+                    <div class="color-dot" style="background: #ff6b6b;"></div>
+                    <div class="color-dot" style="background: #4ecdc4;"></div>
+                    <div class="color-dot" style="background: #ffe66d;"></div>
+                    <div class="color-dot" style="background: #a463f5;"></div>
+                    <div class="color-dot" style="background: #ff9ff3;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <!-- card 2 -->
+            <div class="product-card">
+                <span class="badge-discount">-30%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&auto=format&fit=crop" alt="jaqueta jeans color">
+                <h4 class="product-title">Jaqueta Denim</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 259,90</span>
+                    <span class="new-price">R$ 179,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #1e272e;"></div>
+                    <div class="color-dot" style="background: #48dbfb;"></div>
+                    <div class="color-dot" style="background: #feca57;"></div>
+                    <div class="color-dot" style="background: #ff9f43;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <!-- card 3 -->
+            <div class="product-card">
+                <span class="badge-discount">-50%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1556306535-0f09c5377f0a?w=400&auto=format&fit=crop" alt="tênis colorido">
+                <h4 class="product-title">Tênis Urban Color</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 349,90</span>
+                    <span class="new-price">R$ 174,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #ee5253;"></div>
+                    <div class="color-dot" style="background: #1dd1a1;"></div>
+                    <div class="color-dot" style="background: #341f97;"></div>
+                    <div class="color-dot" style="background: #feca57;"></div>
+                    <div class="color-dot" style="background: #ff9ff3;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <!-- card 4 -->
+            <div class="product-card">
+                <span class="badge-discount">-60%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&auto=format&fit=crop" alt="boné colorido">
+                <h4 class="product-title">Boné Neon</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 99,90</span>
+                    <span class="new-price">R$ 39,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #f6e58d;"></div>
+                    <div class="color-dot" style="background: #ffb8b8;"></div>
+                    <div class="color-dot" style="background: #c56cf0;"></div>
+                    <div class="color-dot" style="background: #ff9f1a;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+        </div>
+
+        <!-- CATEGORIA 2: ELETRÔNICOS -->
+        <div class="category-banner" style="background: linear-gradient(90deg,#e0f7fa,#b2ebf2);">
+            <i class="fas fa-headphones" style="color: #00acc1; font-size: 28px;"></i>
+            <h3 style="font-size: 26px; font-weight: 700;">Eletrônicos - cores RGB e mais</h3>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="badge-discount">-25%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop" alt="fone cor">
+                <h4 class="product-title">Fone RGB</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 299,90</span>
+                    <span class="new-price">R$ 224,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #0f0f0f;"></div>
+                    <div class="color-dot" style="background: #ff3b3b;"></div>
+                    <div class="color-dot" style="background: #0abde3;"></div>
+                    <div class="color-dot" style="background: #ee5a24;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-40%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&auto=format&fit=crop" alt="smartwatch">
+                <h4 class="product-title">Smartwatch Color</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 589,90</span>
+                    <span class="new-price">R$ 353,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #2c3e50;"></div>
+                    <div class="color-dot" style="background: #e67e22;"></div>
+                    <div class="color-dot" style="background: #3498db;"></div>
+                    <div class="color-dot" style="background: #e84342;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-35%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=400&auto=format&fit=crop" alt="caixa de som">
+                <h4 class="product-title">Caixa Bluetooth</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 439,90</span>
+                    <span class="new-price">R$ 285,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #d63031;"></div>
+                    <div class="color-dot" style="background: #6c5ce7;"></div>
+                    <div class="color-dot" style="background: #00cec9;"></div>
+                    <div class="color-dot" style="background: #fdcb6e;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-55%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&auto=format&fit=crop" alt="mouse gamer">
+                <h4 class="product-title">Mouse Gamer RGB</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 189,90</span>
+                    <span class="new-price">R$ 85,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #1e272e;"></div>
+                    <div class="color-dot" style="background: #ff4d4d;"></div>
+                    <div class="color-dot" style="background: #3867d6;"></div>
+                    <div class="color-dot" style="background: #fed330;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+        </div>
+
+        <!-- CATEGORIA 3: CASA & DECORAÇÃO (descontos pesados) -->
+        <div class="category-banner" style="background: linear-gradient(90deg,#f3e5f5,#e1bee7);">
+            <i class="fas fa-couch" style="color: #8e44ad; font-size: 28px;"></i>
+            <h3 style="font-size: 26px;">Casa & Decor - 50% OFF + cores</h3>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="badge-discount">-50%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1551292831-9b8b8e3d6b7e?w=400&auto=format&fit=crop" alt="almofada colorida">
+                <h4 class="product-title">Almofada Mosaico</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 99,90</span>
+                    <span class="new-price">R$ 49,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #ff7979;"></div>
+                    <div class="color-dot" style="background: #badc58;"></div>
+                    <div class="color-dot" style="background: #f0932b;"></div>
+                    <div class="color-dot" style="background: #686de0;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-42%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1584102326837-8c8c3f3e6c6d?w=400&auto=format&fit=crop" alt="luminaria">
+                <h4 class="product-title">Luminária LED</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 179,90</span>
+                    <span class="new-price">R$ 103,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #f6e58d;"></div>
+                    <div class="color-dot" style="background: #ffbe76;"></div>
+                    <div class="color-dot" style="background: #ff7979;"></div>
+                    <div class="color-dot" style="background: #7ed6df;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-38%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1567225591450-060625571e7b?w=400&auto=format&fit=crop" alt="vaso ceramica">
+                <h4 class="product-title">Vaso Artesanal</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 149,90</span>
+                    <span class="new-price">R$ 92,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #b78c5a;"></div>
+                    <div class="color-dot" style="background: #6ab04c;"></div>
+                    <div class="color-dot" style="background: #f9ca24;"></div>
+                    <div class="color-dot" style="background: #30336b;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+            <div class="product-card">
+                <span class="badge-discount">-65%</span>
+                <img class="product-img" src="https://images.unsplash.com/photo-1586023492125-27b9c045c399?w=400&auto=format&fit=crop" alt="jogo de cama">
+                <h4 class="product-title">Roupa de cama</h4>
+                <div class="price-container">
+                    <span class="old-price">R$ 299,90</span>
+                    <span class="new-price">R$ 104,90</span>
+                </div>
+                <div class="color-options">
+                    <div class="color-dot" style="background: #ff9ff3;"></div>
+                    <div class="color-dot" style="background: #48dbfb;"></div>
+                    <div class="color-dot" style="background: #ff6b6b;"></div>
+                    <div class="color-dot" style="background: #1dd1a1;"></div>
+                </div>
+                <button class="btn-add"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            </div>
+        </div>
+        
+        <!-- mais descontos chamada -->
+        <div style="text-align: center; margin: 50px 0 20px;">
+            <span style="background: var(--yellow); padding: 16px 45px; border-radius: 80px; font-size: 24px; font-weight: 800; color: #1e272e; box-shadow: var(--shadow);">
+                🎁 DESCONTOS RELÂMPAGO - CORES LIMITADAS 🎁
+            </span>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">ShopColors</div>
+                <p style="margin-top: 20px; color: #cbd5e1;">Compra fácil, cores infinitas e ofertas reais.</p>
+            </div>
+            <div>
+                <h4 style="color: white;">Institucional</h4>
+                <p style="color: #94a3b8;">Sobre nós</p>
+                <p style="color: #94a3b8;">Políticas</p>
+                <p style="color: #94a3b8;">Troca e devolução</p>
+            </div>
+            <div>
+                <h4 style="color: white;">Ajuda</h4>
+                <p style="color: #94a3b8;">Central de ajuda</p>
+                <p style="color: #94a3b8;">Meus pedidos</p>
+                <p style="color: #94a3b8;">Pagamento</p>
+            </div>
+            <div>
+                <h4 style="color: white;">Redes</h4>
+                <div style="display: flex; gap: 20px; font-size: 28px; margin-top: 10px; color: #b0c4de;">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- pequeno script para selecionar cores (interação atrativa) -->
+    <script>
+        // Adiciona um efeito visual de "selecionado" nas bolinhas de cor
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function(e) {
+                // remove a seleção dos outros dots dentro do mesmo produto
+                let parentColorDiv = this.closest('.color-options');
+                if (parentColorDiv) {
+                    parentColorDiv.querySelectorAll('.color-dot').forEach(d => d.classList.remove('selected'));
+                }
+                this.classList.add('selected');
+            });
+        });
+
+        // opcional: destaque para o primeiro dot de cada opção (mostrar pre selecionado)
+        window.onload = function() {
+            document.querySelectorAll('.color-options').forEach(div => {
+                let firstDot = div.querySelector('.color-dot');
+                if (firstDot) firstDot.classList.add('selected');
+            });
+        }
+    </script>
+</body>
+</html>
